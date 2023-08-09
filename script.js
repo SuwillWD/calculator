@@ -1,7 +1,9 @@
 const display = document.querySelector(".display");
 const opr = document.querySelectorAll(".operator");
 const equals = document.querySelector(".equality");
-const numbers = document.querySelectorAll(".row .number");
+const numbers = document.querySelectorAll(".number");
+const allClear = document.querySelector(".function.ac");
+const clear = document.querySelector(".function.c");
 
 function add(a, b) {
   return a + b;
@@ -58,6 +60,17 @@ opr.forEach((op) => {
 
 equals.addEventListener("click", evaluate);
 
+allClear.addEventListener("click", () => {
+  display.textContent = "0";
+  firstNumber = "";
+  secondNumber = "";
+  operator = null;
+});
+
+clear.addEventListener("click", () => {
+  display.textContent = display.textContent.slice(0, -1);
+});
+
 function displayNumber(number) {
   if (display.textContent === "0" || resetScreen) {
     blackDisplay();
@@ -72,8 +85,7 @@ function blackDisplay() {
 
 function setOperator(op) {
   if (operator !== null) {
-    evaluate;
-    return;
+    evaluate(firstNumber, secondNumber, operator);
   }
   firstNumber = Number(display.textContent);
   operator = op;
