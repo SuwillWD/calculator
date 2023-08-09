@@ -4,6 +4,7 @@ const equals = document.querySelector(".equality");
 const numbers = document.querySelectorAll(".number");
 const allClear = document.querySelector(".function.ac");
 const clear = document.querySelector(".function.c");
+const decimal = document.querySelector(".function.dot");
 
 function add(a, b) {
   return a + b;
@@ -29,6 +30,7 @@ let firstNumber = "";
 let secondNumber = "";
 let operator = null;
 let resetScreen = false;
+let shownResult = false;
 
 function operate(num1, num2, op) {
   switch (op) {
@@ -71,16 +73,19 @@ clear.addEventListener("click", () => {
   display.textContent = display.textContent.slice(0, -1);
 });
 
+decimal.addEventListener("click", addDecimal);
+
 function displayNumber(number) {
-  if (display.textContent === "0" || resetScreen) {
-    blackDisplay();
+  if (display.textContent === "0" || resetScreen || shownResult) {
+    blankDisplay();
   }
   display.textContent += number;
 }
 
-function blackDisplay() {
+function blankDisplay() {
   display.textContent = "";
   resetScreen = false;
+  shownResult = false;
 }
 
 function setOperator(op) {
@@ -98,6 +103,17 @@ function evaluate() {
     alert("ERROR: Division by 0");
   }
   secondNumber = Number(display.textContent);
-  display.textContent = operate(firstNumber, secondNumber, operator);
+  display.textContent =
+    Math.round(operate(firstNumber, secondNumber, operator) * 100) / 100;
   operator = null;
+  shownResult = true;
+}
+
+function addDecimal() {
+  if (resetScreen) blankDisplay();
+  if (display.textContent === "") {
+    display.textContent = "0";
+  }
+  if (display.textContent.includes(".")) return;
+  display.textContent += ".";
 }
