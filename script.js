@@ -69,7 +69,7 @@ allClear.addEventListener("click", () => {
   operator = null;
 });
 
-clear.addEventListener("click", () => {
+clear.addEventListener("click", (event) => {
   display.textContent = display.textContent.slice(0, -1);
 });
 
@@ -94,6 +94,8 @@ function setOperator(op) {
   }
   firstNumber = Number(display.textContent);
   operator = op;
+  if (operator == "x") operator = "*";
+  if (operator == "÷") operator = "/";
   resetScreen = true;
 }
 
