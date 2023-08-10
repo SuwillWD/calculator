@@ -10,4 +10,5 @@ A user-friendly web-based calculator built using HTML, CSS and JavaScript. It pe
 
 ## Links
 
-[The Odin Project's page](https://www.theodinproject.com/lessons/foundations-calculator)
+- [The Odin Project's page](https://www.theodinproject.com/lessons/foundations-calculator)
+- [View the Webiste](https://suwillwd.github.io/calculator/)
