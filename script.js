@@ -5,6 +5,7 @@ const numbers = document.querySelectorAll(".number");
 const allClear = document.querySelector(".function.ac");
 const clear = document.querySelector(".function.c");
 const decimal = document.querySelector(".function.dot");
+const topDisplay = document.querySelector(".upper-display");
 
 function add(a, b) {
   return a + b;
@@ -64,6 +65,7 @@ equals.addEventListener("click", evaluate);
 
 allClear.addEventListener("click", () => {
   display.textContent = "0";
+  topDisplay.textContent = "";
   firstNumber = "";
   secondNumber = "";
   operator = null;
@@ -96,6 +98,7 @@ function setOperator(op) {
   operator = op;
   if (operator == "x") operator = "*";
   if (operator == "÷") operator = "/";
+  topDisplay.textContent = `${firstNumber} ${operator}`;
   resetScreen = true;
 }
 
@@ -105,6 +108,7 @@ function evaluate() {
     alert("ERROR: Division by 0");
   }
   secondNumber = Number(display.textContent);
+  topDisplay.textContent += `${secondNumber} =`;
   display.textContent =
     Math.round(operate(firstNumber, secondNumber, operator) * 100) / 100;
   operator = null;

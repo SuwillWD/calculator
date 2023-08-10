@@ -18,17 +18,28 @@ body {
   padding: 10px;
   border-radius: 8px;
   background-color: white;
+  margin-top: 40px;
 }
 
-.display {
+.screen {
   background-color: #e5e6f0;
   border-radius: 4px;
   width: 185px;
-  height: 30px;
+  height: 45px;
   text-align: right;
   margin-bottom: 5px;
   flex: 1;
+}
+
+.upper-display {
+  height: 10px;
+  font-size: 8px;
+  padding: 2px;
+}
+
+.display {
   font-size: 20px;
+  padding: 2px;
 }
 
 button {
@@ -70,4 +81,10 @@ button:hover {
 
 .function.ac:hover {
   background-color: #fac4f2;
+}
+.footer {
+  color: white;
+  font-size: 6px;
+  margin-top: 25px;
+  margin-left: 55px;
 }
