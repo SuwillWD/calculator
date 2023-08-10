@@ -1,11 +1,73 @@
-/* * {
+* {
   margin: 0;
   padding: 0;
-} */
+  font-size: 12px;
+  font-family: system-ui, -apple-system, sans-serif;
+}
 
 body {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: black;
+}
+
+.calculator {
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: white;
+}
+
+.display {
+  background-color: #e5e6f0;
+  border-radius: 4px;
+  width: 185px;
+  height: 30px;
+  text-align: right;
+  margin-bottom: 5px;
+  flex: 1;
+  font-size: 20px;
+}
+
+button {
+  padding: 5px;
+  background-color: #f4f3f9;
+  border: 0;
+  border-radius: 5px;
+  width: 35px;
+  height: 25px;
+  margin: 5px;
+  flex: 1;
+}
+
+button:hover {
+  background-color: #d8d7da;
+  cursor: pointer;
+}
+
+.equality {
+  width: 85px;
+  background-color: #dae2ff;
+}
+
+.equality:hover {
+  background-color: #c8d3fa;
+}
+
+.operator {
+  background-color: #dae2ff;
+}
+
+.operator:hover {
+  background-color: #c8d3fa;
+}
+
+.function.ac {
+  background-color: #ffd7f9;
+}
+
+.function.ac:hover {
+  background-color: #fac4f2;
 }
